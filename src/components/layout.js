@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import {Helmet} from "react-helmet";
+import * as Styles from './layout.module.scss';
 
 export default class Layout extends React.Component {
   render() {
@@ -10,14 +11,14 @@ export default class Layout extends React.Component {
             <title>{this.props.pageTitle}</title>
           </Helmet>
           <header>
-            <nav>
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
+            <nav className={Styles.nav}>
+              <ul className={Styles.navItems}>
+                <li className={Styles.navItem}><Link to="/">Home</Link></li>
+                <li className={Styles.navItem}><Link to="/about">About</Link></li>
               </ul>
             </nav>
           </header>
-          <main>
+          <main className={Styles.main}>
             {this.props.children}
           </main>
         </div>
